@@ -19,7 +19,7 @@
   --shadow-color-01: rgba(0, 0, 0, 0.12);
   --shadow-color-02:rgba(0, 0, 0, 0.14);
   --shadow-color-03:rgba(0, 0, 0, 0.2);
-  --shadow-color-04: rgba(0, 0, 0, 0.6);
+  --shadow-color-04: rgba(0, 0, 0, 0.06);
   --shadow-color-05: rgba(0, 0, 0, 0.16);
   --shadow-color-06: rgba(0, 0, 0, 0.1);
   --shadow-color-07: rgba(0, 0, 0, 0.08);
@@ -74,6 +74,10 @@ img {
   width: 1200px;
   padding: 0 15px;
   margin: 0 auto;
+}
+/* Секції */
+.section {
+  padding: 94px 0 94px;
 }
 /* Шапка */
 .header {
@@ -141,6 +145,7 @@ img {
   linear-gradient(to right, var(--gradient-color-01), 
   var(--gradient-color-02)), 
   url(../images/hero-img-team.jpg);
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   padding-top: 200px;
@@ -178,8 +183,6 @@ img {
 }
 /* Преимущества */
 .benefits {
-  padding-top: 94px;
-  padding-bottom: 94px;
   font-size: 14px;
 }
 .benefits-list {
@@ -242,8 +245,6 @@ img {
 
 /* Команда */
 .team {
-  padding-top: 94px;
-  padding-bottom: 94px;
   background-color: var(--background-color-02);
 }
 .team-title {
@@ -285,6 +286,9 @@ img {
   justify-content: center;
   margin-bottom: 30px;
 }
+.icon-social-network-list-item:not(:last-child) {
+  margin-right: 10px;
+}
 .link-social-network {
   color: var(--icon-color-01);
   display: flex;
@@ -292,15 +296,12 @@ img {
   align-items: center;
   width: 44px;
   height: 44px;
-  margin-right: 10px;
   border-radius: 50%;
 }
 .icon-social-network {
   fill: currentColor;
 }
-.clients {
-  padding: 94px 0 94px;
-}
+
 .clients-title {
   margin-bottom: 50px;
   text-align: center;
@@ -312,6 +313,9 @@ img {
   display: flex;
   justify-content: center;
 }
+.icon-clients-list li {
+  flex-basis: calc((100% - 5 * 30px) / 6);
+}
 .icon-clients-list li:not(:last-child) {
   margin-right: 30px;
 }
@@ -319,7 +323,6 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 170px;
   height:92px;
   border: 1px solid var(--icon-color-01);
   border-radius: 4px;
@@ -380,10 +383,6 @@ img {
 }
 
 /* Портфолио */
-.gallery {  
-  padding-top: 94px;
-  padding-bottom: 94px;
-}
 .gallery-filter-list {  
   display: flex;
   justify-content: center;
@@ -414,6 +413,9 @@ img {
   margin-top: 30px;
   margin-left: 30px;
 }
+.gallery-list-link {
+  display: block;
+}
 .gallery-text-box {
   padding: 20px 24px;
   border-left: 1px solid var(--border-color-02);
@@ -442,6 +444,9 @@ img {
   color: var(--brand-color-01);
   fill:var(--brand-color-01);
 }
+.gallery-list-link:hover {
+  color:currentColor;
+}
 .link-social-network:hover {
   background-color: var(--brand-color-01);
   color:var(--background-color-01);
@@ -462,7 +467,7 @@ img {
   0px 1px 2px var(--shadow-color-07), 
   0px 2px 2px var(--shadow-color-01);
 }
-.gallery-list li:hover {
+.gallery-list-link:hover {
   cursor: pointer;
   box-shadow: 
   0px 1px 1px var(--shadow-color-01), 
