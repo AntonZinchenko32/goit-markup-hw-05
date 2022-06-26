@@ -32,6 +32,8 @@
   --icon-color-02: rgba(255, 255, 255, 0.1);
 
   --label-color: rgba(47, 48, 58, 0.8);
+
+  --overlay-color: rgba(33, 150, 243, 0.9);
 }
 
 /* *****Styling body***** */
@@ -452,6 +454,26 @@ img {
 .gallery-list-link {
   display: block;
 }
+.gallery .box {
+  position: relative;
+  overflow: hidden;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay-color);
+  
+  transform: translateY(200%);
+  transition: transform 400ms ease;
+}
+.overlay p {
+  padding: 63px 24px;
+  line-height: 1.56;
+  font-size: 18px;
+  color: var(--background-color-01);
+}
 .gallery-text-box {
   padding: 20px 24px;
   border-left: 1px solid var(--border-color-02);
@@ -517,6 +539,9 @@ img {
   color, fill, background-color, border-color, box-shadow;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.gallery-list-link:hover .overlay {
+  transform: translateY(0);
 }
 /* Приховує заголовки */
 .visually-hidden {
