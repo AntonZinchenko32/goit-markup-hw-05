@@ -82,9 +82,7 @@ img {
   padding: 94px 0 94px;
 }
 /* Шапка */
-.header {
-  padding-top: 24px;
-  padding-bottom: 25px;
+.header-container {
   border-bottom: 1px solid var(--border-color-01);
 }
 .header-container {  
@@ -94,6 +92,8 @@ img {
 }
 .logo-link,
 .logo-link-second-part {
+  padding-top: 24px;
+  padding-bottom: 25px;
   color: var(--brand-color-01);
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
@@ -113,6 +113,23 @@ img {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
+}
+.nav-list .link {
+  display: block;
+  padding: 32px 0;
+}
+.link-active {
+  position: relative;
+}
+.link-active::after {
+  content:'';
+  display: block;
+  position: absolute;
+  bottom:-1px;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--brand-color-01);
 }
 .nav-list,
 .address-header-list {
