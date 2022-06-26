@@ -30,6 +30,8 @@
   
   --icon-color-01: #AFB1B8;
   --icon-color-02: rgba(255, 255, 255, 0.1);
+
+  --label-color: rgba(47, 48, 58, 0.8);
 }
 
 /* *****Styling body***** */
@@ -229,7 +231,7 @@ img {
 .desc {  
   padding-bottom: 94px;
 }
-.desc-subtitle {
+.desc-title {
   margin-bottom: 50px;
   text-align: center;
   font-weight: 700;
@@ -241,6 +243,23 @@ img {
 }
 .desc-list li:not(:last-child) {
   margin-right: 30px;
+}
+.thumb {
+  position:relative;
+}
+.label {
+  position:absolute;
+  bottom:0;
+  right:0;
+  left:0;
+  padding: 27px 0 27px;
+  text-align: center;
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 1.14;
+  font-weight: 700;
+  color:var(--background-color-01);
+  background-color: var(--label-color);
 }
 
 /* Команда */
@@ -455,9 +474,7 @@ img {
   border-color: var(--brand-color-01);
 }
 .button:hover,
-.button:focus,
-.button-active:hover,
-.button-active:focus {
+.button:focus {
   background-color: var(--highlight-button-color);
   color: var(--background-color-01);
 }
@@ -475,6 +492,14 @@ img {
   0px 1px 1px var(--shadow-color-01), 
   0px 4px 4px var(--shadow-color-04), 
   1px 4px 6px var(--shadow-color-05);
+}
+/* Переходи і анімація */
+.link,
+.button {
+  transition-property: 
+  color, fill, background-color, border-color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* Приховує заголовки */
 .visually-hidden {
