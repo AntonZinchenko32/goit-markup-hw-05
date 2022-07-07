@@ -44,8 +44,8 @@ body {
   margin: 0;
   letter-spacing: 0.03em;
 }
-/* Reset */
 
+/* Reset */
 h1, h2, h3, p {
   margin: 0;
 }
@@ -72,6 +72,19 @@ img {
   max-width: 100%;
   height: auto;
 }
+/* Приховує заголовки */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
 
 /* Контейнер */
 .container {
@@ -79,16 +92,17 @@ img {
   padding: 0 15px;
   margin: 0 auto;
 }
+
 /* Секції */
 .section {
   padding: 94px 0 94px;
 }
+
 /* Шапка */
 .header-container {
   border-bottom: 1px solid var(--border-color-01);
 }
 .header-container {  
-  /* outline: solid 1px blue; */
   display: flex;
   align-items: center;
 }
@@ -135,7 +149,6 @@ img {
 }
 .nav-list,
 .address-header-list {
-  /* outline: solid 2.5px green; */
   display: flex;
   letter-spacing: 0.02em;
 }
@@ -157,13 +170,15 @@ img {
 .icon-link-envelope, .icon-link-smartphone {
   margin-right: 10px;
 }
+
 /* Герой */
 .hero {  
   max-width: 1600px;
   margin: 0 auto;
   background-color: var(--brand-color-02);
   background-image: 
-  linear-gradient(to right, var(--gradient-color-01), 
+  linear-gradient(to right, 
+  var(--gradient-color-01), 
   var(--gradient-color-02)), 
   url(../images/hero-img-team.jpg);
   background-size: cover;
@@ -202,6 +217,7 @@ img {
 .hero .button {
   letter-spacing: 0.06em;
 }
+
 /* Преимущества */
 .benefits {
   font-size: 14px;
@@ -340,6 +356,7 @@ img {
   fill: currentColor;
 }
 
+/* Клиенты */
 .clients-title {
   margin-bottom: 50px;
   text-align: center;
@@ -493,91 +510,40 @@ img {
   line-height: 1.88;
 }
 
-/* *****Elements behavior***** */
-.link-active {
-  color: var(--brand-color-01);
-}
-.link:hover,
-.link:hover:focus {
-  color: var(--brand-color-01);
-  fill:var(--brand-color-01);
-}
-.gallery-list-link:hover {
-  color:currentColor;
-}
-.link-social-network:hover {
-  background-color: var(--brand-color-01);
-  color:var(--background-color-01);
-}
-.link-clients:hover {
-  border-color: var(--brand-color-01);
-}
-.button:hover,
-.button:focus {
-  background-color: var(--highlight-button-color);
-  color: var(--background-color-01);
-}
-.gallery-filter-list .button:hover {
-  box-shadow:
-  0px 3px 1px var(--shadow-color-06), 
-  0px 1px 2px var(--shadow-color-07), 
-  0px 2px 2px var(--shadow-color-01);
-}
-.gallery-list-link:hover,
-.gallery-list-link:focus
-{
-  cursor: pointer;
-  box-shadow: 
-  0px 1px 1px var(--shadow-color-01), 
-  0px 4px 4px var(--shadow-color-04), 
-  1px 4px 6px var(--shadow-color-05);
-}
-/* Переходи і анімація */
-.link,
-.button {
-  transition-property: 
-  color, fill, background-color, border-color, box-shadow;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-.gallery-list-link:hover .overlay {
-  transform: translateY(0);
-}
 /* Модальное окно */
 .backdrop {
   position: fixed;
+  opacity: 1;
   top:0%;
   left:0%;
   width: 100%;
   height: 100%;
   background-color: var(--shadow-color-03);
-} 
-.backdrop.is-hidden {
-  opacity: 0;
-  pointer-events: none;
-  visibility:hidden;
+
+  transition: opacity 250ms linear;
 }
 .modal {
-  position: absolute;
+  position:absolute;
+  visibility: visible;
   top:50%;
   left:50%;
-
   height: 581px;
   width: 528px;
-
   background-color: #fff;
   box-shadow: 
   0px 1px 3px var(--shadow-color-01), 
   0px 1px 1px var(--shadow-color-02), 
   0px 2px 1px var(--shadow-color-03);
   border-radius: 4px;
+  transform: translate(-50%, -50%) scale(1);
 
-  transform: translate(-50%, -50%);
+  transition: transform 250ms linear;
 }
 .modal-button {
   position: absolute;
   right: 8px;
   top: 8px;
+  padding: 6px;
   background-color: var(--background-color-01);
   border: 1px solid var(--shadow-color-06);
   display: flex;
@@ -588,16 +554,61 @@ img {
   border-radius: 50%;
 }
 
-/* Приховує заголовки */
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+/* *****Elements behavior***** */
+.link:hover,
+.link:hover:focus {
+  color: var(--brand-color-01);
+  fill:var(--brand-color-01);
 }
+.link-active {
+  color: var(--brand-color-01);
+}
+.button:hover,
+.button:focus {
+  background-color: var(--highlight-button-color);
+  color: var(--background-color-01);
+}
+.link-social-network:hover {
+  background-color: var(--brand-color-01);
+  color:var(--background-color-01);
+}
+.link-clients:hover {
+  border-color: var(--brand-color-01);
+}
+.gallery-filter-list .button:hover {
+  box-shadow:
+  0px 3px 1px var(--shadow-color-06), 
+  0px 1px 2px var(--shadow-color-07), 
+  0px 2px 2px var(--shadow-color-01);
+}
+.gallery-list-link:hover,
+.gallery-list-link:focus {
+  color:currentColor;
+  cursor: pointer;
+  box-shadow: 
+  0px 1px 1px var(--shadow-color-01), 
+  0px 4px 4px var(--shadow-color-04), 
+  1px 4px 6px var(--shadow-color-05);
+}
+.gallery-list-link:hover .overlay {
+  transform: translateY(0);
+}
+
+/* Переходи і анімація */
+.link,
+.button {
+  transition-property: 
+  color, fill, background-color, border-color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.1);
+}
+
+
