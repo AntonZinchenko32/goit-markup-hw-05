@@ -539,7 +539,7 @@ img {
 
   transition: transform 250ms linear;
 }
-.modal-button {
+.modal-button-close {
   position: absolute;
   right: 8px;
   top: 8px;
@@ -608,7 +608,7 @@ img {
   pointer-events: none;
 }
 .backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(0.1);
+  transform: translate(-50%, -50%) scale(0);
 }
 
 
